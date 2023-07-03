@@ -24,8 +24,11 @@ export default class App {
     leftSideContainer.classList.add('left-side');
     const rightSideContainer = document.createElement('div');
     rightSideContainer.classList.add('right-side');
+    const gamingArea = document.createElement('div');
+    gamingArea.classList.add('gaming-area');
+    gamingArea.append(cssDisplay.getHtmlElement(), htmlDisplay.getHtmlElement());
     document.body.appendChild(main.getHtmlElement());
-    leftSideContainer.append(header.getHtmlElement(), eventDisplay.getHtmlElement(), cssDisplay.getHtmlElement(), htmlDisplay.getHtmlElement(), footer.getHtmlElement());
+    leftSideContainer.append(header.getHtmlElement(), eventDisplay.getHtmlElement(), gamingArea, footer.getHtmlElement());
     document.querySelector('.main')?.appendChild(leftSideContainer);
     rightSideContainer.append(navDispay.getHtmlElement());
     document.querySelector('.main')?.appendChild(rightSideContainer);

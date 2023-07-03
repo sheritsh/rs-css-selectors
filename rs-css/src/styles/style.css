@@ -1,3 +1,21 @@
 .main {
   display: flex;
 }
+
+.left-side {
+  width: 80vw;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.gaming-area {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+}
+
+.right-side {
+  width: 20vw;
+}

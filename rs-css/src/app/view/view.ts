@@ -8,11 +8,11 @@ export default abstract class View {
     this.elementCreator = this.createView(params);
   }
 
-  getHtmlElement() {
+  getHtmlElement(): HTMLElement {
     return this.elementCreator.getElement();
   }
 
-  createView(params: IViewParams) {
+  createView(params: IViewParams): ElementFabrics {
     const elementParams: IViewParams = {
       tag: params.tag,
       classNames: params.classNames,
@@ -21,4 +21,5 @@ export default abstract class View {
     const elementCreator = new ElementFabrics(elementParams);
     return elementCreator;
   }
+
 }
