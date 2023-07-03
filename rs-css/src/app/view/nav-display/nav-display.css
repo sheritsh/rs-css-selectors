@@ -1,4 +1,10 @@
 .nav-display {
-  border: 1px solid black;
-  height: 100%;
+  /* border-radius: 15px; */
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 3px solid #624e50c2;
+  border-left: 3px solid #624e50c2;
+  border-bottom: 3px solid #624e50c2;
+  height: 100vh;
+  background-color: #291c2bd6;
 }

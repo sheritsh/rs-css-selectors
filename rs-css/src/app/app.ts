@@ -1,11 +1,11 @@
 import '../styles/style.css'
-import CssDisplayView from './view/css-display/css-display-view';
-import EventDisplayView from './view/event-display/event-display-view';
+import CssDisplayView from './view/css-display/css-display-logic';
+import EventDisplayView from './view/event-display/event-display-logic';
 import FooterView from './view/footer/footer-view';
 import HeaderView from './view/header/header-view';
-import HtmlDisplayView from './view/html-display/html-display-html';
+import HtmlDisplayView from './view/html-display/html-display-logic';
 import MainView from './view/main/main-view';
-import NavDisplayView from './view/nav-display/nav-display-view';
+import NavDisplayView from './view/nav-display/nav-display-logic';
 
 export default class App {
   constructor() {

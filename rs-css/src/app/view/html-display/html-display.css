@@ -1,4 +1,3 @@
 .html-display {
-  width: 45%;
-  border: 1px solid black;
+  flex: 1;
 }

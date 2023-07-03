@@ -1,15 +1,15 @@
 import './header.css'
-import { IElement } from "../../util/types";
-import View from '../view';
+import { ILayoutElements } from "../../util/types";
 import headerHTML from './header-html';
+import Layout from '../layout';
 
 const CssClasses = {
   HEADER: 'header',
 };
 
-export default class HeaderView extends View {
+export default class HeaderView extends Layout {
   constructor() {
-    const params: IElement = {
+    const params: ILayoutElements = {
       tag: 'header',
       classNames: [CssClasses.HEADER],
       innerHtml: headerHTML

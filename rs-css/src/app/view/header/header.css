@@ -3,7 +3,29 @@
 }
 
 h2 {
-  font-size: 3vw;
+  color: #893934;
+  font-size: min(36px, 3vw);
   text-align: center;
   font-weight: 400;
 }
+
+.logo {
+  color: rgba(0, 0, 0, 0.712);
+  margin-left: 3px;
+  width: 40%;
+  margin-top: 5px;
+  line-height: 30px;
+}
+
+.logo__img img {
+  width: 32px;
+  height: 32px;
+}
+
+.header__top {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+

@@ -1,15 +1,15 @@
 import './footer.css'
-import { IElement } from "../../util/types";
-import View from '../view';
+import { ILayoutElements } from "../../util/types";
 import footerHTML from './footer-html';
+import Layout from '../layout';
 
 const CssClasses = {
   FOOTER: 'footer',
 };
 
-export default class FooterView extends View {
+export default class FooterView extends Layout {
   constructor() {
-    const params: IElement = {
+    const params: ILayoutElements = {
       tag: 'footer',
       classNames: [CssClasses.FOOTER],
       innerHtml: footerHTML

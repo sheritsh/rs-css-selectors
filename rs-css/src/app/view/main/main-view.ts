@@ -1,8 +1,9 @@
-import ElementFabrics from "../../util/element-fabrics";
-import { IElement } from "../../util/types";
+// MAINWINDOW TO ALL LOGIC
+import LayoutFabrics from "../../util/layout-fabrics";
+import { ILayoutElements } from "../../util/types";
 
 export default class MainView {
-  elementCreator: ElementFabrics;
+  elementCreator: LayoutFabrics;
 
   constructor() {
     this.elementCreator = this.createView();
@@ -13,13 +14,12 @@ export default class MainView {
   }
 
   createView() {
-    const params: IElement = {
+    const params: ILayoutElements = {
       tag: 'main',
       classNames: ['main'],
-      innerHtml: '',
-      callback: null
+      innerHtml: ''
     }
-    const elementCreator = new ElementFabrics(params);
+    const elementCreator = new LayoutFabrics(params);
     return elementCreator;
   }
 }

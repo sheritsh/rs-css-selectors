@@ -1,5 +1,3 @@
-export interface IViewParams {
-  tag: string,
-  classNames: Array<string>,
-  innerHtml: string
+export default interface IEventCallback {
+  (): void;
 }
