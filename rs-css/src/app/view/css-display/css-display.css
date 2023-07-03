@@ -1,3 +1,58 @@
 .css-display {
   flex: 1;
+  box-sizing: border-box;
+  background-color: #efefef83;
 }
+
+.editor-panel {
+  height: 100%;
+  overflow: hidden;
+}
+
+.input-header {
+  padding:  0 10px;
+  font-size: 14px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.728);
+  height: 30px;
+  background: #303338;
+  display: flex;
+  justify-content: space-between;
+}
+
+.editor-area{
+  width: 100%;
+  font-size: 14px;
+  line-height: 150%;
+  position: relative;
+  padding: 10px 10px 10px 35px;
+}
+
+.input-css {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  width: 30vw;
+  font-family: menlo, monospace;
+  overflow: hidden;
+}
+
+.line-numbers {
+  background: #DDD;
+  text-align: right;
+  font-family: menlo, monospace;
+  position: absolute;
+  font-size: 14px;
+  line-height: 150%;
+  top: 0;
+  left: 0;
+  padding: 10px 4px 0 10px;
+}
+
+.description {
+  color: rgb(75, 74, 74);
+}
+
+.filename {
+  color: rgba(255, 255, 255, 0.26);
+}
+

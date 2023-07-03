@@ -7,11 +7,11 @@ const CssClasses = {
 };
 
 export default class HtmlDisplayView extends Logic {
-  constructor() {
+  constructor(htmlDisplayChildren: HTMLElement[]) {
     const params: ILogicElements = {
       tag: 'div',
       classNames: [CssClasses.HTML_DISPLAY],
-      childrens: null
+      childrens: htmlDisplayChildren
     };
     super(params);
   }
