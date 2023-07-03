@@ -1,5 +1,6 @@
 import '../styles/reset.css'
 import '../styles/style.css'
+import levelsData from './data/levels';
 import CssDisplayView from './view/css-display/css-display-logic';
 import EventDisplayView from './view/event-display/event-display-logic';
 import FooterView from './view/footer/footer-view';
@@ -9,25 +10,32 @@ import MainView from './view/main/main-view';
 import NavDisplayView from './view/nav-display/nav-display-logic';
 
 export default class App {
+  private eventDisplayChildren: HTMLElement[];
   private cssDisplayChildren: HTMLElement[];
   private htmlDisplayChildren: HTMLElement[];
+  private navDisplayChildren: HTMLElement[];
+  private currentLevel = 1;
 
   constructor() {
+  this.eventDisplayChildren = [];
   this.cssDisplayChildren = [];
   this.htmlDisplayChildren = [];
+  this.navDisplayChildren = [];
+  this.composeEventDisplay();
   this.composeCssDisplay();
   this.composeHtmlDisplay();
-  this.createView(this.cssDisplayChildren, this.htmlDisplayChildren);
+  this.composeNavDisplay();
+  this.createView(this.cssDisplayChildren, this.htmlDisplayChildren, this. navDisplayChildren, this.eventDisplayChildren);
   }
 
-  createView(cssDisplayChildren: HTMLElement[], htmlDisplayChildren: HTMLElement[]): void {
+  createView(cssDisplayChildren: HTMLElement[], htmlDisplayChildren: HTMLElement[], navDisplayChildren: HTMLElement[], eventDisplayChildren: HTMLElement[]): void {
     const main = new MainView();
     const header = new HeaderView();
     const footer = new FooterView();
-    const eventDisplay = new EventDisplayView();
+    const eventDisplay = new EventDisplayView(eventDisplayChildren);
     const cssDisplay = new CssDisplayView(cssDisplayChildren);
     const htmlDisplay = new HtmlDisplayView(htmlDisplayChildren);
-    const navDispay = new NavDisplayView();
+    const navDispay = new NavDisplayView(navDisplayChildren);
     const leftSideContainer = document.createElement('div');
     leftSideContainer.classList.add('left-side');
     const rightSideContainer = document.createElement('div');
@@ -91,11 +99,47 @@ export default class App {
       lineNumbers.innerHTML += `${i+1}<br>`;
     }
     const inputHtml = document.createElement('div');
-    inputHtml.textContent = '<div style="castle"></div>';
+    inputHtml.textContent = `<div style="castle"> \r\n</div>`;
+    inputHtml.style.whiteSpace = 'pre';
     inputHtml.classList.add('input-html');
     editorArea.append(lineNumbers, inputHtml);
     editorPanel.append(inputHeader, editorArea);
     this.htmlDisplayChildren.push(editorPanel);
+  }
+
+  composeEventDisplay() {
+    const princess = document.createElement('div');
+    princess.classList.add('princess');
+    this.eventDisplayChildren.push(princess);
+  }
+
+  composeNavDisplay(){
+    const title = document.createElement('div');
+    title.classList.add('nav__title');
+    title.textContent = levelsData[this.currentLevel - 1].title;
+    this.eventDisplayChildren.push(title);
+    const toDo = document.createElement('div');
+    toDo.classList.add('nav__toDo');
+    toDo.textContent = levelsData[this.currentLevel - 1].toDo;
+    const syntax = document.createElement('div');
+    syntax.classList.add('nav__syntax');
+    syntax.textContent = levelsData[this.currentLevel - 1].syntax;
+    const help = document.createElement('div');
+    help.classList.add('nav__help');
+    help.textContent = levelsData[this.currentLevel - 1].help;
+    const examplesTitle = document.createElement('div');
+    examplesTitle.classList.add('nav__examples-title');
+    examplesTitle.textContent = 'Examples';
+    const examples = document.createElement('div');
+    examples.classList.add('nav__examples');
+    levelsData[this.currentLevel - 1].examples.forEach((line ) => {
+      examples.innerHTML += line;
+      if (line !== levelsData[this.currentLevel - 1].examples[levelsData[this.currentLevel - 1].examples.length - 1]) {
+        examples.innerHTML += '<hr>';
+      }
+    });
+
+    this.navDisplayChildren.push(title, toDo, syntax, help, examplesTitle, examples);
   }
 
 }

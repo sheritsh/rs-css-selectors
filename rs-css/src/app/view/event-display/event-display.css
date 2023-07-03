@@ -8,3 +8,9 @@
   background-color: #291c2bac;
   background-size: cover;
 }
+
+.princess {
+  width: 10vw;
+  background-image: url(../../../../assets/img/princess.png);
+  background-size: cover;
+}

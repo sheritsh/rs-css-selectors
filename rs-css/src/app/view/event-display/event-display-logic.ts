@@ -7,11 +7,11 @@ const CssClasses = {
 };
 
 export default class EventDisplayView extends Logic {
-  constructor() {
+  constructor(eventDisplayChildren: HTMLElement[]) {
     const params: ILogicElements = {
       tag: 'div',
       classNames: [CssClasses.EVENT_DISPLAY],
-      childrens: null
+      childrens: eventDisplayChildren
     };
     super(params);
   }

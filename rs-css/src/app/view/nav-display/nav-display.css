@@ -7,4 +7,38 @@
   border-bottom: 3px solid #624e50c2;
   height: 100vh;
   background-color: #291c2bd6;
+  padding-top: 5vh;
+  color: white;
+  line-height: 150%;
+  padding: 5vh 10px;
+}
+
+.nav__title {
+  font-size: 2vw;
+}
+
+.nav__toDo {
+  padding-top: 10px;
+}
+
+.nav__syntax {
+  width: max-content;
+  padding: 5px 5px;
+  margin-left: 5px;
+  background: rgba(255,255,255,.05);
+  border-bottom: solid 2px rgba(255,255,255,.1);
+}
+
+.nav__help {
+  color: #888;
+  font-size: 15px;
+}
+
+.nav__examples-title {
+padding-top: 10px;
+font-size: 18px;
+}
+
+.nav__examples {
+font-size: 14px;
 }
