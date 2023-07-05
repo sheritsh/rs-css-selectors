@@ -21,7 +21,7 @@
 }
 
 .editor-area{
-  width: 100%;
+  width: 90%;
   font-size: 14px;
   line-height: 150%;
   position: relative;
@@ -31,7 +31,7 @@
 .input-css {
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  width: 30vw;
+  width: 80%;
   font-family: menlo, monospace;
   overflow: hidden;
 }
@@ -56,3 +56,13 @@
   color: rgba(255, 255, 255, 0.26);
 }
 
+form {
+  display: flex;
+  width:95%;
+  justify-content: space-between;
+}
+
+.input-area {
+  display: flex;
+  gap: 1vw;
+}

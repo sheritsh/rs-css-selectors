@@ -29,6 +29,7 @@ body {
 .main {
   display: flex;
   width: 100%;
+  overflow: hidden;
 }
 
 .left-side {
@@ -49,3 +50,130 @@ body {
   width: 20vw;
 }
 
+.obj-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  overflow: hidden;
+}
+
+
+/*  DISPLAY ELEMENTS START */
+princess {
+  display: block;
+  width: 20vh;
+  height: 20vh;
+  background-image: url(../../assets/img/princess.png);
+  background-size: cover;
+}
+
+knight {
+  display: block;
+  width: 20vh;
+  height: 20vh;
+  background-image: url(../../assets/img/knight.png);
+  background-size: cover;
+}
+
+assassin {
+  display: block;
+  width: 20vh;
+  height: 20vh;
+  background-image: url(../../assets/img/assassin.png);
+  background-size: cover;
+}
+
+dragon {
+  display: block;
+  width: 20vh;
+  height: 20vh;
+  background-image: url(../../assets/img/dragon.png);
+  background-size: cover;
+}
+
+#aggressive {
+  background-image: url(../../assets/img/knight-aggresive.png);
+}
+
+fog {
+  background-image: url(../../assets/img/fog.jpeg);
+  background-size: contain;
+  border-top-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+garden {
+  background-image: url(../../assets/img/garden.jpeg);
+  background-size: contain;
+  border-top-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+fortress {
+  background-image: url(../../assets/img/castle.jpeg);
+  background-size: contain;
+  border-top-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+#flower {
+  background-image: url(../../assets/img/garden-flowers.jpeg);
+  background-size: contain;
+}
+
+.hidden {
+  opacity: 0.5;
+}
+/*  DISPLAY ELEMENTS END */
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.2s infinite;
+}
+
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(1.1, 0.9); }
+  50% { transform: scale(0.9, 1.1); }
+  75% { transform: scale(1.05, 0.95); }
+}
+
+.gelatine {
+  animation: gelatine 1s infinite;
+}
+
+.winner-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30vw;
+  height: 25vh;
+  background-color: rgba(137, 118, 55, 0.959);
+  z-index: 11;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  line-height: 25vh;
+}
+
+.none {
+  display: none;
+}
+
+@keyframes typing {
+  from { width: 0; }
+}
+
+.typewritten {
+  animation: typing 3s steps(20) 1s forwards;
+}

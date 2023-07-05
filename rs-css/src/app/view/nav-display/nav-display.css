@@ -7,14 +7,19 @@
   border-bottom: 3px solid #624e50c2;
   height: 100vh;
   background-color: #291c2bd6;
-  padding-top: 5vh;
   color: white;
   line-height: 150%;
   padding: 5vh 10px;
+  position: relative;
 }
 
 .nav__title {
   font-size: 2vw;
+  line-height: 100%;
+}
+
+.current {
+  background-color: rgba(153, 152, 151, 0.496);
 }
 
 .nav__toDo {
@@ -41,4 +46,136 @@ font-size: 18px;
 
 .nav__examples {
 font-size: 14px;
+}
+
+.nav__level-switch {
+  top: 0;
+  left: 0;
+  position: absolute;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  background-color: #291c2b;
+  border-top: 3px solid #624e50c2;
+  border-left: 3px solid #624e50c2;
+  border-bottom: 3px solid #624e50c2;
+  padding: 5vh 10px;
+  transition: all 0.5s ease-out;
+}
+
+.translated {
+  transform: translateX(+100%);
+}
+
+.level-switch__close-btn {
+  width: 2vw;
+  height: 2vw;
+  background-image: url(../../../../assets/svg/cross.svg);
+  background-size: contain;
+}
+
+.level-switch__header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2vh;
+}
+
+.level-status {
+  width: 1vw;
+  height: 1vw;
+  background-color: yellow;
+  margin-right: 1vw;
+}
+
+.status-red {
+  background-color: red;
+}
+
+.status-orange {
+  background-color: orange;
+}
+
+.status-green {
+  background-color: lightgreen;
+}
+
+.level-numb {
+  margin-right: 1vw;
+}
+
+.nav__level-line {
+  padding: 2px;
+  display: flex;
+  margin-bottom: 1vh;
+}
+
+strong, tag {
+  background: rgba(255,255,255,.1);
+  padding: 3px;
+}
+
+.nav__header-menu {
+  width: 2vw;
+  height: 2vw;
+  background-image: url(../../../../assets/svg/menu.svg);
+  background-size: contain;
+}
+
+.nav__header-menu:hover {
+  opacity: 0.7;
+}
+
+.nav__header-menu:active {
+  scale: 0.8;
+}
+
+.nav__header_prev {
+  width: 1.3vw;
+  height: 1.3vw;
+  background-image: url(../../../../assets/svg/prev.svg);
+  background-size: contain;
+}
+
+.nav__header_next {
+  width: 1.3vw;
+  height: 1.3vw;
+  background-image: url(../../../../assets/svg/nxt.svg);
+  background-size: contain;
+}
+
+.nav__header_prev:hover,
+.nav__header_next:hover {
+  opacity: 0.7;
+}
+
+.nav__header_prev:active,
+.nav__header_next:active {
+  scale: 0.8;
+}
+
+.nav__header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+.nav__level-line:hover {
+  background: rgba(255,255,255,.07);
+  cursor: pointer;
+}
+
+.nav__level-line:active {
+  background: rgba(255,255,255,.01);
+  cursor: pointer;
+}
+
+.reset-btn {
+  padding: 3px;
+  background-color: #df7770;
+  border: 1px solid black;
+}
+
+.reset-btn:active {
+  scale: 0.85;
 }
