@@ -16,6 +16,9 @@
     "plugins": [
         "@typescript-eslint"
     ],
+    "ignorePatterns": [
+        "highlight.min.js"
+    ],
     "rules": {
         "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/no-var-requires": 0

@@ -1,4 +1,3 @@
-// MAINWINDOW TO ALL LOGIC
 import LayoutFabrics from "../../util/layout-fabrics";
 import { ILayoutElements } from "../../util/types";
 

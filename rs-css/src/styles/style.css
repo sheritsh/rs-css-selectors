@@ -60,7 +60,6 @@ body {
   overflow: hidden;
 }
 
-
 /*  DISPLAY ELEMENTS START */
 princess {
   display: block;
@@ -162,7 +161,6 @@ fortress {
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
-  align-content: center;
   line-height: 25vh;
 }
 

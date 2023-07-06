@@ -73,7 +73,7 @@ const levelsData: ILevelData[] = [
     level: 5,
     title: 'Combine the Descendant & ID Selectors',
     toDo: 'Select knight in flower garden',
-    selector: '.flower knight',
+    selector: '#flower knight',
     syntax: '#id  A',
     help:
     'You can combine any selector with the descendent selector.',

@@ -1,6 +1,7 @@
 import './html-display.css'
 import { ILogicElements } from "../../util/types";
 import Logic from '../logic';
+import '../../../vendored/atom-one-dark.min.css'
 
 const CssClasses = {
   HTML_DISPLAY: 'html-display',

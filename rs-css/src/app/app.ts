@@ -8,6 +8,7 @@ import HeaderView from './view/header/header-view';
 import HtmlDisplayView from './view/html-display/html-display-logic';
 import MainView from './view/main/main-view';
 import NavDisplayView from './view/nav-display/nav-display-logic';
+import hljs from 'highlight.js';
 
 export default class App {
   private eventDisplayChildren: HTMLElement[];
@@ -51,7 +52,7 @@ export default class App {
     document.querySelector('.main')?.appendChild(rightSideContainer);
     const winnerWindow = document.createElement('div');
     winnerWindow.classList.add('winner-window', 'none');
-    winnerWindow.textContent = 'Поздравляю! Ты победил!';
+    winnerWindow.textContent = 'Congratulations! You passed the game.';
     document.body.appendChild(winnerWindow);
     this.receiveEnteredSelector();
   }
@@ -79,7 +80,7 @@ export default class App {
     const formCss = document.createElement('form');
     formCss.id = 'selector-form';
     const inputCss = document.createElement('input');
-    inputCss.innerHTML = '<pre><code>'
+    inputCss.innerHTML = '<pre><code class="css">'
     inputCss.setAttribute('type', 'text');
     inputCss.setAttribute('placeholder', 'Type in a CSS selector');
     inputCss.setAttribute('maxlength', '20');
@@ -132,11 +133,22 @@ export default class App {
       lineNumbers.innerHTML += `${i+1}<br>`;
     }
     const inputHtml = document.createElement('div');
-    inputHtml.textContent += `<div style="castle">`;
-    inputHtml.textContent += levelsData[this.currentLevel - 1].htmlMarkup;
-    inputHtml.textContent += `\n</div>`;
-    inputHtml.style.whiteSpace = 'pre-line';
-    inputHtml.classList.add('input-html');
+    const preHtml = document.createElement('pre');
+    const codeHtml = document.createElement('code');
+    codeHtml.classList.add('javascript');
+    preHtml.append(codeHtml);
+    codeHtml.textContent += `<div style="castle">`;
+    codeHtml.textContent += levelsData[this.currentLevel - 1].htmlMarkup;
+    codeHtml.textContent += `\n</div>`;
+    codeHtml.style.whiteSpace = 'pre-line';
+    codeHtml.classList.add('input-html');
+    inputHtml.append(preHtml);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        if (block instanceof HTMLElement)
+        hljs.highlightElement(block);
+      });
+    });
     editorArea.append(lineNumbers, inputHtml);
     editorPanel.append(inputHeader, editorArea);
     this.htmlDisplayChildren.push(editorPanel);
@@ -286,6 +298,10 @@ export default class App {
     this.composeHtmlDisplay();
     this.composeNavDisplay();
     this.createView(this.cssDisplayChildren, this.htmlDisplayChildren, this. navDisplayChildren, this.eventDisplayChildren);
+    document.querySelectorAll('pre code').forEach((block) => {
+      if (block instanceof HTMLElement)
+      hljs.highlightElement(block);
+    });
   }
 
   getCurrentLvl() {
@@ -322,6 +338,7 @@ export default class App {
             obj?.classList.remove('gelatine');
           });
           if (this.currentLevel === 10) {
+            this.refresh();
             document.querySelector('.winner-window')?.classList.remove('none');
           } else {
             this.nextLvl();
