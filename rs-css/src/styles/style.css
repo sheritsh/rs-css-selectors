@@ -175,3 +175,11 @@ fortress {
 .typewritten {
   animation: typing 3s steps(20) 1s forwards;
 }
+
+.pulse {
+  animation: pulse 2s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from { transform: scale(0.95); }
+  to { transform: scale(1.05); }
+}

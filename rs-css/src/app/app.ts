@@ -55,6 +55,10 @@ export default class App {
     winnerWindow.textContent = 'Congratulations! You passed the game.';
     document.body.appendChild(winnerWindow);
     this.receiveEnteredSelector();
+    const correctObjects = document.querySelectorAll(`.obj-screen ${levelsData[this.currentLevel - 1].selector}`);
+    correctObjects.forEach((obj) => {
+      obj?.classList.add('pulse');
+    });
   }
 
   composeCssDisplay(): void {
@@ -331,6 +335,7 @@ export default class App {
       if (inputSelector.value === levelsData[this.currentLevel - 1].selector) {
         this.setLvlCompleteStatus();
         correctObjects.forEach((obj) => {
+          obj?.classList.remove('pulse');
           obj?.classList.add('gelatine');
         });
         setTimeout(() => {
